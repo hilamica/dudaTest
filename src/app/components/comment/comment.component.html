@@ -1,3 +1,10 @@
-<p>
-  comment works!
-</p>
+<div class="comment">
+  <div>
+    <div>name: {{detailes.name}}</div>
+    <div>comment: {{detailes.content}}</div>
+  </div>
+  <div>
+    <button>edit</button>
+    <button (click)="removeCommment(detailes)">remove</button>
+  </div>
+</div>

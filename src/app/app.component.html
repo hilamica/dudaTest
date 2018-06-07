@@ -1,7 +1,9 @@
 <div>User Reviews</div>
-<div>comments container</div>
-<form class="form" >
-  <input #name type="text"  placeholder="Your Name">
+<div>
+  <app-comment *ngFor="let comment of comments" [detailes]="comment" (commentToDeleteEmitter)= "deleteComment(comment)"></app-comment>
+</div>
+<form class="form">
+  <input #name type="text" placeholder="Your Name">
   <input #comment type="text" placeholder="Your Comment">
   <button (click)="addNewComment(name.value, comment.value)">add</button>
 </form>
