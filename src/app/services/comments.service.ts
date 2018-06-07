@@ -23,7 +23,10 @@ export class CommentsService {
   removeComment(_commentToDelete: Comment) {
     return this.http.delete(`${environment.api}/comments/${_commentToDelete.id}`);
   }
-  //remove
-  //edit
+
+
+  save(_comment: Comment) {
+    return this.http.put(`${environment.api}/comments/${_comment.id}`, _comment);
+  }  //edit
 
 }

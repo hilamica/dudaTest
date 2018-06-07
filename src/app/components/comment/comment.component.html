@@ -4,7 +4,13 @@
     <div>comment: {{detailes.content}}</div>
   </div>
   <div>
-    <button>edit</button>
+    <button (click)="edit = !edit">edit</button>
     <button (click)="removeCommment(detailes)">remove</button>
   </div>
 </div>
+<form *ngIf="edit">
+  <input #name type="text" value="{{detailes.name}}">
+  <input #comment type="text" value="{{detailes.content}}">
+  <button (click)="save(name.value, comment.value); edit = !edit">save</button>
+</form>
+<!-- <app-form *ngIf="!edit" [formType]="edit"></app-form> -->

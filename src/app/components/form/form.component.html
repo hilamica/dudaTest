@@ -1,0 +1,5 @@
+<form class="form">
+  <input #name type="text" placeholder="Your Name">
+  <input #comment type="text" placeholder="Your Comment">
+  <button (click)="addNewComment(name.value, comment.value)">add</button>
+</form>

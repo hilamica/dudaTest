@@ -9,7 +9,7 @@ import { Comment } from '../../interfaces/comment';
 })
 export class CommentComponent implements OnInit {
 
-  @Input() detailes;
+  @Input() detailes: Comment;
   @Output() commentToDeleteEmitter: EventEmitter<Comment> = new EventEmitter<Comment>();
 
   constructor(private _commentsService: CommentsService) { }
@@ -19,10 +19,20 @@ export class CommentComponent implements OnInit {
 
   removeCommment(_commentToDelete: Comment) {
     this.commentToDeleteEmitter.emit(_commentToDelete);
-
-    // this._commentsService.removeComment(id).subscribe(() => {
-
-    // })
   }
 
+  // edit(_comment:Comment){
+  //   this._commentsService.edit(
+  // }
+
+  save(name: string, comment: string) {
+    this.detailes.name = name;
+    this.detailes.content = comment;
+
+
+    this._commentsService.save(this.detailes).subscribe(data => {
+      console.log(data);
+      // this.detailes = data;
+    })
+  }
 }
