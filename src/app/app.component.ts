@@ -33,12 +33,32 @@ export class AppComponent {
       avatar: ''
     }
 
-    this._commentService.addNewComment(this.new_comment).subscribe(() => {
-      this._commentService.getComments().subscribe((data: Comment[]) => {
-        this.comments = data;
-        console.log(this.comments);
-      })
+
+    // this._commentService.addNewComment(this.new_comment).subscribe((data: Comment[]) => {
+    //   this.comments = data;
+    // })
+
+    this._commentService.addNewComment(this.new_comment);
+
+    this._commentService.commentListSubject.subscribe((data: Comment[]) => {
+      this.comments = data;
     })
+
+    // this._commentService.addNewComment(this.new_comment).subscribe(() => {
+    // this._commentService.getComments().subscribe((data: Comment[]) => {
+    //   this.comments = data;
+    //   console.log(this.comments);
+    // })
+
+    // this._commentService.commentListSubject.next()
+    // })
+
+    // this._commentService.commentListSubject.subscribe(data => {
+    //   this._commentService.getComments().subscribe((data: Comment[]) => {
+    //     this.comments = data;
+    //     console.log(this.comments);
+    //   })
+    // })
   }
 
   deleteComment(_comment: Comment) {
