@@ -19,10 +19,16 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-background-color: white;
-
+    background-color: white;
 }
 
 input {
-    margin: 10px;
+    margin: 5px 0;
+}
+
+button{
+    background-color: lightblue;
+    color: white;
+    display: flex;
+    align-self: flex-end;
 }

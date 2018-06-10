@@ -6,7 +6,11 @@
   <form class="form">
     <input #name type="text" placeholder="Your Name">
     <input #comment type="text" placeholder="Your Comment">
-    <button (click)="addNewComment(name.value, comment.value)">add</button>
+    <select #gender>
+      <option>female</option>
+      <option>male</option>
+    </select>
+    <button class="button" (click)="addNewComment(name.value, comment.value, gender.value)">add</button>
   </form>
   <!-- <app-form [formType]="new"></app-form> -->
 </div>

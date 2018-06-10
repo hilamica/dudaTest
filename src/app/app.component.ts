@@ -25,12 +25,17 @@ export class AppComponent {
     })
   }
 
-  addNewComment(name: string, comment: string) {
+  addNewComment(name: string, comment: string, gender: string) {
+    // const imgGen = require('@dudadev/random-img');
+    // imgGen({ gender: 'men', id: 5 })
+    //   .then(avatarUrl => {/* will be the same image on every call of the function */});
+    this.id++;
     this.new_comment = {
-      id: this.id++,
+      id: 1,
       name: name,
+      gender: gender,
       content: comment,
-      avatar: ''
+      avatar: 'avatarUrl'
     }
 
 
